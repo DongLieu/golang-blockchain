@@ -12,6 +12,7 @@ require (
 	github.com/stretchr/testify v1.3.0
 	golang.org/x/crypto v0.0.0-20190320223903-b7391e95e576
 	golang.org/x/net v0.0.0-20190322120337-addf6b3196f6 // indirect
+	golang.org/x/sys v0.1.0 // indirect
 	gopkg.in/vrecan/death.v3 v3.0.1
 )
 
