@@ -9,13 +9,13 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	"syscall"
-	"runtime"
 	"os"
+	"runtime"
+	"syscall"
 
 	"gopkg.in/vrecan/death.v3"
 
-	"github.com/tensor-programming/golang-blockchain/blockchain"
+	"github.com/DongLieu/golang-blockchain/blockchain"
 )
 
 const (
@@ -359,7 +359,7 @@ func MineTx(chain *blockchain.BlockChain) {
 	txs = append(txs, cbTx)
 
 	newBlock := chain.MineBlock(txs)
-	UTXOSet  := blockchain.UTXOSet{chain}
+	UTXOSet := blockchain.UTXOSet{chain}
 	UTXOSet.Reindex()
 
 	fmt.Println("New Block mined")
@@ -408,7 +408,7 @@ func HandleVersion(request []byte, chain *blockchain.BlockChain) {
 func HandleConnection(conn net.Conn, chain *blockchain.BlockChain) {
 	req, err := ioutil.ReadAll(conn)
 	defer conn.Close()
-	
+
 	if err != nil {
 		log.Panic(err)
 	}
